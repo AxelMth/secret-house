@@ -1,18 +1,17 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "nuxt": "^3.14.159",
-    "vue": "latest",
-    "vue-router": "latest"
-  },
-  "packageManager": "pnpm@9.13.0+sha1.f149ab27b27e712ac9a58ce1717c307364ccdca8"
+    "name": "secret-house",
+    "private": true,
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "start": "node dist"
+    },
+    "packageManager": "pnpm@9.13.0+sha1.f149ab27b27e712ac9a58ce1717c307364ccdca8",
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "prettier": "^3.3.3",
+        "typescript": "^5.6.3"
+    },
+    "dependencies": {
+        "express": "^4.21.1"
+    }
 }
