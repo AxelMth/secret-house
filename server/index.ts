@@ -27,7 +27,7 @@ app.use(cors({
 }))
 
 app.get('/buzz', (req: express.Request, res: express.Response) => {
-    child_process.exec('python /home/amathieu/secret-house/play_sound.py', (error, stdout, stderr) => {
+    child_process.exec('python /home/amathieu/play_sound.py', (error, stdout, stderr) => {
         if (error) {
             console.error(`exec error: ${error}`)
             return
