@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  const hostname = 'localhost:3000'
+  const hostname = import.meta.env.PROD ? '192.168.1.118' : 'localhost:3000'  
   const onBuzz = async () => {
     fetch('http://' + hostname + '/buzz', {
       method: 'GET',
