@@ -6,7 +6,8 @@ const app = express.default()
 
 const allowedOrigins: string[] = [
     'http://localhost:5173',
-    'http://192.168.1.118:5173'
+    'http://192.168.1.118:5173',
+    'http://192.168.1.118:5173/'
 ]
 
 app.use(cors({
@@ -15,6 +16,7 @@ app.use(cors({
             callback(new Error('Missing origin'))
             return
         }
+        console.log('Origin: ' + origin)
         if (allowedOrigins.indexOf(origin) !== -1) {
             callback(null, true)
             return
