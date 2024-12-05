@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { ref } from 'vue';
   import HiddenSection from './HiddenSection.vue';
-  import {users} from './constants/users.constants';
+  import {users, type User} from './constants/users.constants';
 
   const hostname = import.meta.env.PROD ? '192.168.1.118:3000' : 'localhost:3000'  
   const onBuzz = async () => {
@@ -13,7 +13,6 @@
       }
     })
   }
-  
   const initUserId = () => {
     const userId = window.location.pathname.split('/')[1];
     if (!userId) return
@@ -21,7 +20,7 @@
     window.location.replace('/')
   }
 
-  const user = ref<typeof users[keyof typeof users] | null>(null)
+  const user = ref<User | null>(null)
   const initUser = (userId: string) => {
     user.value = users[userId] 
   }

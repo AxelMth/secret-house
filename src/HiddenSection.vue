@@ -14,7 +14,8 @@ const props = defineProps<{
       <slot></slot>
     </div>
     <button @click="isShown = !isShown">
-      {{ isShown ? 'Cacher' : 'Montrer' }}
+      <v-icon v-if="isShown" name="fa-eye-slash" scale="1.5" fill="black"/>
+      <v-icon v-else name="fa-eye" scale="1.5" fill="black"/>
     </button>
   </section>
 </template>

@@ -11,6 +11,9 @@ dependencies:
   express:
     specifier: ^4.21.1
     version: 4.21.1
+  oh-vue-icons:
+    specifier: 1.0.0-rc3
+    version: 1.0.0-rc3(vue@3.5.12)
   vue:
     specifier: ^3.5.12
     version: 3.5.12(typescript@5.6.3)
@@ -1932,6 +1935,19 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
+  /oh-vue-icons@1.0.0-rc3(vue@3.5.12):
+    resolution: {integrity: sha512-+k2YC6piK7sEZnwbkQF3UokFPMmgqpiLP6f/H0ovQFLl20QA5V4U8EcI6EclD2Lt5NMQ3k6ilLGo8XyXqdVSvg==}
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.5.12(typescript@5.6.3)
+      vue-demi: 0.12.5(vue@3.5.12)
+    dev: false
+
   /on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
@@ -2485,6 +2501,21 @@ packages:
   /vscode-uri@3.0.8:
     resolution: {integrity: sha512-AyFQ0EVmsOZOlAnxoFOGOq1SQDWAB7C6aqMGS23svWAllfOaxbuFvcT8D1i8z3Gyn8fraVeZNNmN6e9bxxXkKw==}
     dev: true
+
+  /vue-demi@0.12.5(vue@3.5.12):
+    resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.5.12(typescript@5.6.3)
+    dev: false
 
   /vue-tsc@2.1.10(typescript@5.6.3):
     resolution: {integrity: sha512-RBNSfaaRHcN5uqVqJSZh++Gy/YUzryuv9u1aFWhsammDJXNtUiJMNoJ747lZcQ68wUQFx6E73y4FY3D8E7FGMA==}
