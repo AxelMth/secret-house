@@ -1,87 +1,7 @@
 <script setup lang="ts">
-const users = {
-  '1': {
-    name: 'Diego',
-    secret: 'J’ai été un DJ très connu sur le plan international',
-    actions: [
-      'J’ai été un DJ très connu sur le plan international',
-      'J’ai monté une startup qui a levé plus de 100 millions',
-      'Je suis multi millionnaire',
-    ]
-  },
-  '2': {
-    name: 'Pia',
-    secret: 'J’ai déjà été en prison',
-    actions: [
-      'J’ai été un DJ très connu sur le plan international',
-      'J’ai monté une startup qui a levé plus de 100 millions',
-      'Je suis multi millionnaire',
-    ]
-  },
-  '3': {
-    name: 'Johan',
-    secret: 'Je suis en couple avec Paol',
-    actions: [
-      'J’ai été un DJ très connu sur le plan international',
-      'J’ai monté une startup qui a levé plus de 100 millions',
-      'Je suis multi millionnaire',
-    ]
-  },
-  '4': {
-    name: 'Tatiana',
-    secret: 'Je suis fan du d’En Avant Gimgamp',
-    actions: [
-      'J’ai été un DJ très connu sur le plan international',
-      'J’ai monté une startup qui a levé plus de 100 millions',
-      'Je suis multi millionnaire',
-    ]
-  },
-  '5': {
-    name: 'Camille',
-    secret: 'J’ai monté une startup qui a levé plus de 100 millions',
-    actions: [
-      'J’ai été un DJ très connu sur le plan international',
-      'J’ai monté une startup qui a levé plus de 100 millions',
-      'Je suis multi millionnaire',
-    ]
-  },
-  '6': {
-    name: 'Paol',
-    secret: '123456',
-    actions: [
-      'J’ai été un DJ très connu sur le plan international',
-      'J’ai monté une startup qui a levé plus de 100 millions',
-      'Je suis multi millionnaire',
-    ]
-  },
-  '7': {
-    name: 'Léa',
-    secret: 'Je suis multi millionnaire',
-    actions: [
-      'J’ai été un DJ très connu sur le plan international',
-      'J’ai monté une startup qui a levé plus de 100 millions',
-      'Je suis multi millionnaire',
-    ]
-  },
-  '9': {
-    name: 'Nicolas',
-    secret: 'J’ai été SDF pendant plus de 3 ans',
-    actions: [
-      'J’ai été un DJ très connu sur le plan international',
-      'J’ai monté une startup qui a levé plus de 100 millions',
-      'Je suis multi millionnaire',
-    ]
-  },
-  '10': {
-    name: 'Agnès',
-    secret: 'Je parle 10 langues différentes',
-    actions: [
-      'J’ai été un DJ très connu sur le plan international',
-      'J’ai monté une startup qui a levé plus de 100 millions',
-      'Je suis multi millionnaire',
-    ]
-  },
-}
+import { ref } from 'vue'
+import HiddenSection from './HiddenSection.vue';
+import {users} from './constants/users.constants'
   const hostname = import.meta.env.PROD ? '192.168.1.118:3000' : 'localhost:3000'  
   const onBuzz = async () => {
     fetch('http://' + hostname + '/buzz', {
@@ -92,8 +12,6 @@ const users = {
       }
     })
   }
-  import { ref } from 'vue'
-import HiddenSection from './HiddenSection.vue';
   const initUserId = () => {
     const userId = window.location.pathname.split('/')[1];
     if (!userId) return
@@ -101,9 +19,9 @@ import HiddenSection from './HiddenSection.vue';
     window.location.replace('/')
   }
 
-  const user = ref(null)
+  const user = ref<typeof users[keyof typeof users] | null>(null)
   const initUser = (userId: string) => {
-    user.value = users[userId]
+    user.value = users[userId] 
   }
   
   initUserId()
@@ -113,13 +31,13 @@ import HiddenSection from './HiddenSection.vue';
 
 <template>
   <main>
-    <h1>Bonjour {{ user.name }}</h1>
+    <h1>Bonjour {{ user?.name }}</h1>
     <HiddenSection title="Ton secret">
-      {{ user.secret }}
+      {{ user?.secret }}
     </HiddenSection>
     <HiddenSection  title="Tes actions à réaliser">
       <ul>
-        <li v-for="action in user.actions" :key="action">{{ action }}</li>
+        <li v-for="action in user?.actions" :key="action">{{ action }}</li>
 
       </ul>
       </HiddenSection>  

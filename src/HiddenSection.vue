@@ -40,7 +40,6 @@ p {
   font-size: 20px;
 }
 
-
 div.hidden {
   filter: blur(8px);
 }
