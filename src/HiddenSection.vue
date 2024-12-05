@@ -33,6 +33,12 @@ section {
   text-align: center;
 }
 
+@media (min-width: 1024px) {
+  section {
+    width: 100%;
+  }
+}
+
 p {
   font-weight: bold;
   color: white;
