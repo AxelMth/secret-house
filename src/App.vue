@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import HiddenSection from './HiddenSection.vue';
-import {users} from './constants/users.constants'
+  import { ref } from 'vue';
+  import HiddenSection from './HiddenSection.vue';
+  import {users} from './constants/users.constants';
+
   const hostname = import.meta.env.PROD ? '192.168.1.118:3000' : 'localhost:3000'  
   const onBuzz = async () => {
     fetch('http://' + hostname + '/buzz', {
@@ -12,6 +13,7 @@ import {users} from './constants/users.constants'
       }
     })
   }
+  
   const initUserId = () => {
     const userId = window.location.pathname.split('/')[1];
     if (!userId) return
@@ -38,7 +40,6 @@ import {users} from './constants/users.constants'
     <HiddenSection  title="Tes actions à réaliser">
       <ul>
         <li v-for="action in user?.actions" :key="action">{{ action }}</li>
-
       </ul>
       </HiddenSection>  
   </main>
