@@ -93,6 +93,7 @@ const users = {
     })
   }
   import { ref } from 'vue'
+import HiddenSection from './HiddenSection.vue';
   const initUserId = () => {
     const userId = window.location.pathname.split('/')[1];
     if (!userId) return
@@ -113,17 +114,21 @@ const users = {
 <template>
   <main>
     <h1>Bonjour {{ user.name }}</h1>
-    <p>Ton secret est: {{ user.secret }}</p>
-    <p>Tes actions à réaliser:</p>
-    <ul>
-      <li v-for="action in user.actions" :key="action">{{ action }}</li>
-    </ul>
+    <HiddenSection title="Ton secret">
+      {{ user.secret }}
+    </HiddenSection>
+    <HiddenSection  title="Tes actions à réaliser">
+      <ul>
+        <li v-for="action in user.actions" :key="action">{{ action }}</li>
+
+      </ul>
+      </HiddenSection>  
   </main>
-  <footer>
+  <!-- <footer>
     <button @click="onBuzz">
       Buzzer
     </button>
-  </footer>
+  </footer> -->
 </template>
 
 <style scoped>
@@ -138,5 +143,8 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+.hidden-section {
+  display: none;
 }
 </style>
