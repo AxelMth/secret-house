@@ -23,8 +23,7 @@ const props = defineProps<{
 <style scoped>
 section {
   position: relative;
-
-  padding: 50px;
+  padding: 20px;
   background-color: white;
   min-width: 200px;
   width: 50%;

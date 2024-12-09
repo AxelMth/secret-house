@@ -42,27 +42,48 @@
       </ul>
       </HiddenSection>  
   </main>
-  <!-- <footer>
+  <footer>
     <button @click="onBuzz">
       Buzzer
     </button>
-  </footer> -->
+  </footer>
 </template>
 
 <style scoped>
+:host {
+  display: flex;
+  flex-direction: column;
+  gap : 1rem;
+}
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: flex-start;
+  padding-top: 20px;
+  height: calc(100vh - 200px);
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    height: calc(100vh - 200px);
+    justify-content: center;
+    padding-top: 50px;
+  }
 }
 footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 50px); 
 }
-.hidden-section {
-  display: none;
+button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
 }
 </style>
