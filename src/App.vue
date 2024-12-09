@@ -5,7 +5,7 @@
 
   const hostname = import.meta.env.PROD ? '192.168.1.118:3000' : 'localhost:3000'  
   const onBuzz = async () => {
-    fetch('http://' + hostname + '/buzz', {
+    fetch('http://' + hostname + '/buzz' + `?userId=${localStorage.getItem('userId')}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -13,6 +13,7 @@
       }
     })
   }
+
   const initUserId = () => {
     const userId = window.location.pathname.split('/')[1];
     if (!userId) return
@@ -85,5 +86,8 @@ button {
   border-radius: 50%;
   height: 100px;
   width: 100px;
+
+  cursor: pointer;
+
 }
 </style>

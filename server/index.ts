@@ -17,7 +17,6 @@ app.use(cors({
             callback(new Error('Missing origin'))
             return
         }
-        console.log('Origin: ' + origin)
         if (allowedOrigins.indexOf(origin) !== -1) {
             callback(null, true)
             return
@@ -28,7 +27,8 @@ app.use(cors({
 }))
 
 app.get('/buzz', (req: express.Request, res: express.Response) => {
-    child_process.exec('python /home/amathieu/play_sound.py', (error, stdout, stderr) => {
+    const { userId } = req.query;
+    child_process.exec(`python /home/amathieu/play_sound.py ${userId}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`exec error: ${error}`)
             return
