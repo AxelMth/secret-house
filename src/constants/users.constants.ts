@@ -17,81 +17,81 @@ export const users: { [key: string]: User } = {
       name: 'Diego',
       secret: 'J’ai été un DJ très connu sur le plan international',
       actions: [
-        'J’ai été un DJ très connu sur le plan international',
-        'J’ai monté une startup qui a levé plus de 100 millions',
-        'Je suis multi millionnaire',
+        'S’émerveille devant une playlist Spotify en disant que ça lui rappelle de bons souvenirs.',
+        'Explique que le rythme d’une chanson est parfait pour “les clubs à Miami”.',
+        'Insiste pour mixer un son “juste pour montrer quelque chose de basique”.',
       ]
     },
     '27432a67-47f7-4e84-8ba5-b61704501e06': {
       name: 'Pia',
-      secret: 'J’ai déjà été en prison',
+      secret: 'Je suis un(e) ancien(ne) espion(ne)',
       actions: [
-        'J’ai été un DJ très connu sur le plan international',
-        'J’ai monté une startup qui a levé plus de 100 millions',
-        'Je suis multi millionnaire',
+        'Pose une question étrange sur une porte ou une fenêtre (“elle est bien sécurisée ?”).',
+        'Explique qu’il n’aime pas trop être pris en photo ou filmé.',
+        'Discrètement, échange son verre avec celui de quelqu’un d’autre en disant que “c’est par précaution”.',
       ]
     },
     '4604a840-7c4e-43be-acce-72e3a7edd72c': {
       name: 'Johan',
       secret: 'Je suis en couple avec Paol',
       actions: [
-        'J’ai été un DJ très connu sur le plan international',
-        'J’ai monté une startup qui a levé plus de 100 millions',
-        'Je suis multi millionnaire',
+        'Complimente Paol sur une action banale (comme couper le fromage).',
+        'Propose une activité à faire tous les deux devant tout le monde (ciné, randonnée).',
+        'Passe derrière Paol et lui tient les épaules'
       ]
     },
     'd58cc578-2597-4724-911a-68b25ae6000e': {
       name: 'Tatiana',
-      secret: 'Je suis fan du d’En Avant Gimgamp',
+      secret: 'Je suis un acteur ou actrice célèbre dans un autre pays',
       actions: [
-        'J’ai été un DJ très connu sur le plan international',
-        'J’ai monté une startup qui a levé plus de 100 millions',
-        'Je suis multi millionnaire',
+        'Complimente quelqu’un en disant qu’il a “le charisme d’une star de cinéma”.',
+        'Corrige quelqu’un sur une référence culturelle en disant qu’il connaît “les coulisses de l’industrie”.',
+        'Insiste pour qu’on prenne une photo de groupe avec lui/elle au centre.',
       ]
     },
     '384a68fc-07b4-4988-af2b-1cfb17f5f39e': {
       name: 'Camille',
-      secret: 'J’ai monté une startup qui a levé plus de 100 millions',
+      secret: 'J’ai déjà monté une startup ',
       actions: [
-        'J’ai été un DJ très connu sur le plan international',
-        'J’ai monté une startup qui a levé plus de 100 millions',
-        'Je suis multi millionnaire',
+        'Complimente quelqu’un sur une idée “vraiment innovante”.',
+        'Évoque les challenges de “gérer des équipes en pleine croissance”.',
+        'Propose spontanément d’investir dans une idée pendant la soirée.',
       ]
     },
     'eb0a6060-d6c7-4609-ba80-ea1953ca33f1': {
       name: 'Paol',
-      secret: '123456',
+      secret: 'Je suis en couple avec Johan',
       actions: [
-        'J’ai été un DJ très connu sur le plan international',
-        'J’ai monté une startup qui a levé plus de 100 millions',
-        'Je suis multi millionnaire',
+        'Lui demande si il a passé une bonne journée. S’il répond oui, lui demande pourquoi.',
+        'Réagit fortement si Johan s’approche de quelqu’un d’autre, même en plaisantant.',
+        'Interrompt une conversation pour demander à Johan s’il va bien.',
       ]
     },
     'ddabe6e8-9feb-4209-bf68-b50a1572df1a': {
       name: 'Léa',
-      secret: 'Je suis multi millionnaire',
+      secret: 'J’ai failli être champion(ne) olympique',
       actions: [
-        'J’ai été un DJ très connu sur le plan international',
-        'J’ai monté une startup qui a levé plus de 100 millions',
-        'Je suis multi millionnaire',
+        'Fait un commentaire technique sur une posture ou un geste de quelqu’un.',
+        'Explique qu’il adore regarder les JO, surtout une discipline particulière.',
+        'Réalise une démonstration physique (ex. : fait un squat ou une figure) en disant “c’est pas mal, non ?”.',
       ]
     },
     '012f9f7a-ff8e-452f-ab80-e3bad782d075': {
       name: 'Nicolas',
       secret: 'J’ai été SDF pendant plus de 3 ans',
       actions: [
-        'J’ai été un DJ très connu sur le plan international',
-        'J’ai monté une startup qui a levé plus de 100 millions',
-        'Je suis multi millionnaire',
+        'Demande si quelqu’un a un vêtement chaud à prêter pour “juste essayer”.',
+        'Parle avec nostalgie d’un parc ou d’un banc qui avait une vue incroyable.',
+        'Demande s\'il y a pas de la 86.',
       ]
     },
     '575502e0-32ca-4180-9c42-dd94827f033f': {
       name: 'Agnès',
       secret: 'Je parle 10 langues différentes',
       actions: [
-        'J’ai été un DJ très connu sur le plan international',
-        'J’ai monté une startup qui a levé plus de 100 millions',
-        'Je suis multi millionnaire',
+        'Corrige quelqu’un sur un mot en disant “dans cette langue, c’est pas tout à fait ça”.',
+        'Compare une expression française avec une variante dans une autre langue.',
+        'Traduit une blague entière dans une langue étrangère et en explique les nuances.',
       ]
     },
   }
