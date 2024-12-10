@@ -38,9 +38,7 @@
       {{ user?.secret }}
     </HiddenSection>
     <HiddenSection  title="Tes actions à réaliser">
-      <ul>
-        <li v-for="action in user?.actions" :key="action">{{ action }}</li>
-      </ul>
+        <div v-for="action in user?.actions" :key="action">{{ action }}</div>
       </HiddenSection>  
   </main>
   <footer>
