@@ -28,7 +28,7 @@ app.use(cors({
 
 app.get('/buzz', (req: express.Request, res: express.Response) => {
     const { userId } = req.query;
-    child_process.exec(`python /home/amathieu/play_sound.py ${userId}`, (error, stdout) => {
+    child_process.exec(`python play_sound.py public/${userId}.mp3`, (error, stdout) => {
         if (error) {
             console.error(`exec error: ${error}`)
             res.status(500).send('error')
