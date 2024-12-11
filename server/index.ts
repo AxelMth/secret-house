@@ -101,6 +101,21 @@ app.get('/user', (req: express.Request, res: express.Response) => {
     })
 })
 
+app.get('/scoreboard', (req: express.Request, res: express.Response) => {
+    const scoreByUser = Object.keys(users).reduce((acc, userId) => {
+        const score = users[userId].actions.reduce((_acc, action, index) => {
+            if (userActions[userId][action]) {
+                _acc += [10, 20, 30, 50][index]
+            }
+            return _acc
+        }, 0)
+        const userName = users[userId].name
+        acc[userName] = score
+        return acc
+    }, {} as Record<string, number>)
+    res.send(scoreByUser)
+})
+
 app.listen(3000, () => {
     console.log('listening on port 3000')
 })
