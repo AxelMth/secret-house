@@ -1,12 +1,30 @@
 <script setup lang="ts">
   import { ref } from 'vue';
   import HiddenSection from './HiddenSection.vue';
-  import {users, type User} from './constants/users.constants';
+
+  interface User {
+  name: string;
+  secret: string;
+  actions: string[];
+}
 
   const hostname = import.meta.env.PROD ? '192.168.1.118:3000' : 'localhost:3000'  
   const onBuzz = async () => {
     fetch('http://' + hostname + '/buzz' + `?userId=${localStorage.getItem('userId')}`, {
       method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Allow-Control-Allow-Origin': '*'
+      }
+    })
+  }
+
+  const actionChecked = ref<Record<string, boolean>>({})  
+  const onSelectionAction = (event: Event, action: User["actions"][0]) => {
+    actionChecked.value[action] = (event.target as HTMLInputElement).checked
+
+    fetch('http://' + hostname + '/action' + `?userId=${localStorage.getItem('userId')}&action=${action}&isDone=${actionChecked.value[action]}`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Allow-Control-Allow-Origin': '*'
@@ -23,7 +41,17 @@
 
   const user = ref<User | null>(null)
   const initUser = (userId: string) => {
-    user.value = users[userId] 
+    fetch('http://' + hostname + '/user' + `?userId=${userId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Allow-Control-Allow-Origin': '*'
+      }
+    }).then(response => response.json())
+      .then(data => {
+        user.value = data
+        actionChecked.value = data.actionsDone
+      })
   }
   
   initUserId()
@@ -38,8 +66,11 @@
       {{ user?.secret }}
     </HiddenSection>
     <HiddenSection  title="Tes actions à réaliser">
-        <div v-for="action in user?.actions" :key="action">{{ action }}</div>
-      </HiddenSection>  
+      <div v-for="action in user?.actions" :key="action">
+        <input type="checkbox" @change="onSelectionAction($event, action)" :checked="actionChecked[action]">
+        <label>{{ action }}</label>
+      </div>
+    </HiddenSection>
   </main>
   <footer>
     <button @click="onBuzz">
@@ -87,5 +118,9 @@ button {
 
   cursor: pointer;
 
+}
+
+label{
+  margin-right: 10px;
 }
 </style>
