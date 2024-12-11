@@ -1,10 +1,9 @@
 import pygame
 import sys
 
-import os
-os.system("pactl set-default-sink JBL Flip 5")
 
 def play_sound(file_path):
+
     # Initialize pygame mixer
     pygame.mixer.init()
     
