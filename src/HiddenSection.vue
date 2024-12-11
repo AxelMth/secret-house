@@ -29,7 +29,6 @@ section {
   width: 50%;
   border-radius: 12px;
   color: black;
-  text-align: center;
 }
 
 @media (min-width: 1024px) {
