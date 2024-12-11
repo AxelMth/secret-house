@@ -1,24 +1,39 @@
 <script lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 export default {
   name: 'ScoreBoard',
   setup() {
     const hostname = import.meta.env.PROD ? '192.168.1.36:3000' : 'localhost:3000';
-
     const scoreBoard = ref<Record<string, number>>({});
-    
-    fetch('http://' + hostname + '/scoreboard', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Allow-Control-Allow-Origin': '*',
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        scoreBoard.value = data;
-      });
+
+    const fetchScoreBoard = () => {
+      fetch('http://' + hostname + '/scoreboard', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Allow-Control-Allow-Origin': '*',
+        },
+      })
+        .then(response => response.json())
+        .then(data => {
+          scoreBoard.value = data;
+        });
+    };
+
+    // Fetch the scoreboard initially
+    fetchScoreBoard();
+
+    // Set up interval to fetch the scoreboard every 1 minute
+    let intervalId: number;
+    onMounted(() => {
+      intervalId = setInterval(fetchScoreBoard, 60000);
+    });
+
+    // Clear the interval when the component is unmounted
+    onUnmounted(() => {
+      clearInterval(intervalId);
+    });
 
     // Function to generate a random gradient
     const getRandomGradient = () => {
