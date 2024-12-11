@@ -4,16 +4,6 @@ export interface User {
   actions: string[];
 }
 export const users: { [key: string]: User } = {
-  'test': {
-    name: 'Utilisateur test',
-    secret: 'Je possède 2 chats',
-    actions: [
-      'Dit qu’il adore les animaux mais qu’il est particulièrement attaché aux chats.',
-      'Mon premier chat s\'appelle Rivoli.',
-      'Mon deuxième chat s\'appelle Ummus.',
-      'Explique en détail pourquoi les chats sont meilleurs que les chiens.',
-    ],
-  },
   '6d2de273-9901-4fb7-93c6-baf943890a3c': {
     name: 'Diego',
     secret: 'J’ai été un DJ très connu sur le plan international',
@@ -92,16 +82,6 @@ export const users: { [key: string]: User } = {
       'Demande si quelqu’un a un vêtement chaud à prêter pour “juste essayer”.',
       'Parle avec nostalgie d’un parc ou d’un banc qui avait une vue incroyable.',
       'Raconte une anecdote émouvante sur une personne qui l’a aidé un jour.',
-    ],
-  },
-  '575502e0-32ca-4180-9c42-dd94827f033f': {
-    name: 'Agnès',
-    secret: 'Je parle 10 langues différentes',
-    actions: [
-      'Mentionne que certaines langues expriment mieux les émotions.',
-      'Corrige quelqu’un sur un mot en disant “dans cette langue, c’est pas tout à fait ça”.',
-      'Compare une expression française avec une variante dans une autre langue.',
-      'Récite un proverbe célèbre dans une langue rare et en explique le sens.',
     ],
   },
 };
